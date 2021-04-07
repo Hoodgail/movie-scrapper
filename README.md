@@ -4,7 +4,7 @@ NodeJS movie scrapper lib on server side
 
 # Installation
 ```bash
-npm install scrapper
+npm install movie-scrapper
 ```
 
 # Usage
