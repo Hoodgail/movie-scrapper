@@ -1,0 +1,23 @@
+.TopItemList {
+     margin: auto;
+     width: fit-content;
+     display: flex;
+     margin-top: 10px;
+     margin-bottom: 10px;
+}
+.TopItem {
+     height: 200px;
+     overflow: hidden;
+     margin-right: 15px;
+     border-radius: 10px;
+     box-shadow: 0px 5px 14px #00000042;
+     transition: all 0.1s;
+}
+.TopItem:hover {
+     transform: scale(1.05);
+}
+.TopItem .thumbnail {
+     height: inherit;
+     width: inherit;
+     -webkit-user-drag: none;
+}

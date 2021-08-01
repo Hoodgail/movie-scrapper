@@ -1,7 +1,10 @@
 import fetch from "node-fetch";
-import { JSDOM } from "jsdom";
-
+import Extender from "./Extender.js";
 import MovieItem from "./MovieItem.js";
+
+import ffmpeg from "ffmpeg";
+import fs from "fs";
+
 
 /**
  * The class that will be used to scrape and parse data
@@ -34,10 +37,12 @@ export default class Srapper {
                genreSyntax,
                series,
                movies,
-               home
+               home,
+               hostname
           } = config;
 
           this.base = base;
+          this.hostname = hostname;
 
           this.syntax = new Map();
           this.page = new Map();
@@ -52,6 +57,17 @@ export default class Srapper {
           this.genres = genres;
 
           this.selector = selector;
+     }
+
+     async genre(genre) {
+          if (!this.genres.includes(genre)) return { items: [] };
+          const path = this.base + `/genre/${genre.replace(/[ ]/gm, "-").toLowerCase()}/`;
+
+          const document = await Extender.document(path)
+
+          const items = this.movieItem(document);
+
+          return { items }
      }
 
 
@@ -98,17 +114,75 @@ export default class Srapper {
       * @return {Array<object>} - the items as Arrays of objects
       */
      movieItem(document) {
-          return [...document.querySelectorAll(this.selector.item.base)].map(element => {
-               const thumbElement = element.querySelector(this.selector.item.thumb);
-               const titleElement = element.querySelector(this.selector.item.title);
-               const hrefELement = element.querySelector(this.selector.item.href);
+
+          return [...document.querySelectorAll(this.selector.ITEM.base)].map(element => {
+
+               const thumbElement = element.querySelector(this.selector.ITEM.thumb);
+               const titleElement = element.querySelector(this.selector.ITEM.title);
+               const hrefELement = element.querySelector(this.selector.ITEM.href);
+               const idString = element.getAttribute("data-movie-id");
 
                return new MovieItem({
+                    id: idString,
                     thumbnail: thumbElement ? thumbElement.src.trim() : null,
                     title: titleElement ? titleElement.innerHTML.trim() : null,
                     href: hrefELement ? hrefELement.href.trim() : null
                })
           });
+     }
+
+     /**
+      * Gets all of the movie items of new movies
+      * 
+      * @param {Document} document - The website's document elment
+      * @return {Array<object>} - the items as Arrays of objects
+      */
+     newMovieItem(document) {
+          return [...document.querySelectorAll(this.selector.NEW.base)].map(element => {
+               const titleElement = element.querySelector(this.selector.NEW.title);
+               const hrefELement = element.querySelector(this.selector.NEW.href);
+               const descElement = element.querySelector(this.selector.NEW.desc);
+
+               const bi = element.style._values["background-image"].match(/\((.*)\)/);
+
+               return new MovieItem({
+                    href: hrefELement ? hrefELement.href.trim() : null,
+                    title: titleElement ? titleElement.innerHTML.trim() : null,
+                    desc: descElement ? descElement.innerHTML.trim() : null,
+                    thumbnail: bi ? bi[1].replace(/\"/gm, "") : null,
+               })
+          })
+     }
+
+     async home() {
+
+          const raw = await this.get(
+               this.page.get("home")
+          )
+
+          const document = Extender.parseDocument(raw);
+
+          const wrap = [...document.querySelectorAll(".movies-list-wrap")].map(wrap => {
+               const title = wrap.querySelector(".ml-title .pull-left span").textContent
+               const list = [...wrap.querySelectorAll(".ml-title .nav-tabs li a")].map(a => {
+
+                    const id = a.href.split("about:blank").pop();
+
+                    const element = wrap.querySelector(id);
+                    const title = a.textContent;
+                    const items = this.movieItem(element);
+
+                    items.forEach(i => Object.assign(i, i.assign()))
+
+                    return { title, items };
+               });
+
+               return { title, list }
+          })
+
+          const new_movies = this.newMovieItem(document);
+
+          return { new_movies, items: wrap }
      }
 
      /**
@@ -118,11 +192,12 @@ export default class Srapper {
       * @return {Object} - the parsed json site data
       */
      parse(text) {
-          const { window: { document } } = new JSDOM(text);
+          const document = Extender.parseDocument(text)
 
           const items = this.movieItem(document);
 
           return { items }
      }
+
 
 }

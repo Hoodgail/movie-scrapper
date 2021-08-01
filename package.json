@@ -6,13 +6,49 @@
   "author": "Hoodgail Benjamin (http://github.com/hoodgail/)",
   "homepage": "https://github.com/hoodgail/movie-scrapper#readme",
   "url": "https://github.com/hoodgail/movie-scrapper/issues",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "webpack",
+    "build:dev": "webpack --mode development --watch",
+    "public": "ngrok http 3000"
+  },
   "funding": {
     "type": "paypal",
     "url": "https://paypal.me/hoodgail"
   },
   "dependencies": {
+    "@videojs/http-streaming": "^2.6.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "css-loader": "^5.2.1",
+    "csshake": "^1.5.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-http-proxy": "^1.6.2",
+    "ffmpeg": "^0.0.4",
+    "filepond": "^4.27.0",
     "jsdoc": "^3.6.6",
     "jsdom": "^16.5.2",
-    "node-fetch": "^2.6.1"
+    "json5": "^2.2.0",
+    "lodash": "^4.17.21",
+    "lowdb": "^1.0.0",
+    "metatags-generator": "^1.1.8",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2",
+    "scaledrone-node": "^1.5.0",
+    "style-loader": "^2.0.0",
+    "tippy.js": "^6.3.1",
+    "token-generator": "^1.0.0",
+    "webpack": "^5.33.2"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "raw-loader": "^4.0.2",
+    "video.js": "^7.11.8",
+    "webpack-cli": "^4.6.0"
   }
 }

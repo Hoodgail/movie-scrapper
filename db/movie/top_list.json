@@ -1,0 +1,22 @@
+{
+  "header": [
+    {
+      "thumbnail": "/image/snowfall.jpg",
+      "action": {
+        "search": "Snowfall"
+      }
+    },
+    {
+      "thumbnail": "/image/mortal-kombat.png",
+      "action": {
+        "search": "Mortal Kombat"
+      }
+    },
+    {
+      "thumbnail": "/image/kg.jpg",
+      "action": {
+        "search": "Godzilla vs. Kong"
+      }
+    }
+  ]
+}

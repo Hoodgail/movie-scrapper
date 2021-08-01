@@ -1,0 +1,119 @@
+.MovieListParent {
+  display: grid;
+  overflow: hidden;
+  margin: auto;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+
+.MovieItemSources {
+  display: flex;
+  padding: 20px;
+}
+.MovieItemSources * {
+  transition: all 0.1s;
+}
+.MovieItemSources:hover .title,
+.MovieItemSources:hover .title {
+  display: flex;
+  color: white;
+}
+
+.MovieItemSources .material-icons {
+  margin-right: 15px;
+  position: relative;
+  top: -2.5px;
+}
+
+#MovieItem {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+  border-radius: 15px;
+  transition: all 0.1s;
+  display: inline-block;
+}
+
+#MovieItem .progressHolder {
+  position: absolute;
+  display: block;
+  bottom: 15%;
+  width: 90%;
+  background: #ffffff5c;
+  height: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+#MovieItem .progressTitle {
+  position: absolute;
+  display: block;
+  bottom: 12%;
+  left: 50%;
+  color: white;
+  font-family: monospace;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+#MovieItem .progress {
+  background: #ffffff96;
+  border-radius: inherit;
+  height: 100%;
+}
+
+#MovieItem[loading="true"] * {
+  display: none;
+}
+
+#MovieItem[loading="true"] .loading {
+  display: block !important;
+}
+
+#MovieItem:hover {
+  transform: scale(1.1);
+  background: #00000026;
+  border-radius: 5px;
+  overflow: visible;
+}
+
+#MovieItem:hover .thumbnail {
+  border-radius: 5px;
+}
+
+#MovieItem .loading {
+  width: 150px;
+}
+#MovieItem .title {
+  display: flex;
+  font-size: 11px;
+  color: white;
+}
+#MovieItem .title * {
+  margin: auto;
+}
+#MovieItem .title .text {
+  bottom: 0;
+  right: 0;
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 85px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#MovieItem .thumbnail {
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  z-index: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+  box-shadow: 0px 5px 14px #00000042;
+}

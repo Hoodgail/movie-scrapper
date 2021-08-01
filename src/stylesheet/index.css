@@ -1,0 +1,89 @@
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap";
+
+/* fallback */
+@font-face {
+     font-family: 'Material Icons';
+     font-style: normal;
+     font-weight: 400;
+     src: url(./font/material-icons.woff2) format('woff2');
+}
+   
+.material-icons {
+     font-family: 'Material Icons';
+     font-weight: normal;
+     font-style: normal;
+     font-size: 24px;
+     line-height: 1;
+     letter-spacing: normal;
+     text-transform: none;
+     display: inline-block;
+     white-space: nowrap;
+     word-wrap: normal;
+     direction: ltr;
+     -font-feature-settings: 'liga';
+     -webkit-font-smoothing: antialiased;
+}
+
+* {
+     color: #ffffff82;
+     font-family: 'Lato', sans-serif;
+}
+
+#root {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background: #36393f;
+    top: 0;
+    overflow: hidden;
+    left: 0;
+}
+
+#right {
+     overflow: hidden;
+     width: 95%;
+     height: -webkit-fill-available;
+     margin: auto;
+     margin-bottom: 25px;
+}
+
+.material-icons {
+     user-select: none;
+}
+
+
+.tippy-box {
+     background-color: #202225 !important;
+}
+.tippy-arrow {
+     color: #202225 !important;
+}
+
+.genres {
+    display: grid;
+    overflow: auto;
+    margin: auto;
+    margin-bottom: 25px;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+
+.genres .genre {
+     padding: 15px;
+     border-radius: 5px;
+     margin: 5px;
+     color: white;
+     cursor: pointer;
+     width: 92px;
+     font-size: 14px;
+     font-weight: bold;
+     font-family: monospace;
+     transition: all 0.1s;
+     text-shadow: -1px 3px 11px #00000096;
+     box-shadow: 0px 5px 14px #00000029;
+     transition: all 0.1s;
+}
+
+.genres .genre:hover {
+     transform: scale(1.1);
+     box-shadow: 0px 5px 14px #00000049;
+}

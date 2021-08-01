@@ -1,0 +1,83 @@
+#Background {
+     background-color: rgba(0, 0, 0, 0.347);
+}
+
+#Page {
+     overflow: auto;
+     height: -webkit-fill-available;
+     display: block;
+     width: -webkit-fill-available;
+}
+
+#Page > h1 {
+    background: #2f3136;
+    padding: 10px;
+    text-align: left;
+    border-radius: 50px;
+    padding-left: 24px;
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+#Page *[center="true"] {
+     text-align: center;
+     align-content: center;
+}
+
+#Page > .addInput {
+     margin: auto;
+     margin-top: 28px;
+     width: 80%;
+     display: flex;
+     background: #00000026;
+     padding: 15px;
+     border-radius: 50px;
+}
+#Page > .addInput input {
+     outline: none;
+     width: 95%;
+     display: block;
+     border: none;
+     padding: 10px;
+     background: transparent;
+}
+
+
+#Page .searchButton {
+     margin-left: 10px;
+     padding: 5px;
+}
+
+#Page .items .body { 
+     margin-bottom: 35px;
+}
+
+#Page .items .body .label {
+     padding: 10px;
+}
+
+#Page .items .body .label .title {
+     display: block;
+     font-size: 20px;
+     color: white;
+     margin-bottom: 20px;
+}
+
+#Page .items .body .label .tab-label {
+     background: #00000024;
+     padding: 10px;
+     margin: 10px;
+     border-radius: 7px;
+     transition: all 0.1s;
+     cursor: pointer;
+}
+
+#Page .items .body .label .tab-label:hover {
+     background:#00000034 ;
+}
+
+#Page .items .body .label .tab-label.active {
+     border-radius: 5px;
+     background: #00000075;
+     box-shadow: 0px 2px 3px #00000045;
+}

@@ -1,0 +1,78 @@
+@keyframes show {
+  0% {
+ transform: translate(-50%, 100%);
+  }
+  100% {
+ transform: translate(-50%, 0%);
+  }
+  50% {
+ transform: translate(-50%, -10%);
+  }
+}
+
+@keyframes hide {
+  0% {
+ transform: translate(-50%, 0%);
+  }
+  100% {
+ transform: translate(-50%, 100%);
+  }
+  50% {
+ transform: translate(-50%, -10%);
+  }
+}
+
+#Lister {
+  position: absolute;
+  bottom: 0px;
+  margin: 10px;
+  z-index: 10;
+  left: 50%;
+  width: 80%;
+  border-radius: 10px;
+  animation-fill-mode: forwards;
+  background: #ffffff17;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 11px #00000033;
+}
+
+#Lister > .items {
+  width: fit-content;
+  margin: auto;
+}
+#Lister > .items > .addItem {
+  margin: 10px;
+  padding: 10px;
+  background: #00000029;
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 2px 11px #0000002b;
+  transition: all 0.1s;
+}
+#Lister > .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  border-radius: 50px;
+  margin: 5px;
+}
+#Lister > .items > .addItem:hover {
+  transform: translateY(-5px);
+  background: #0000004f;
+}
+#Lister > .items > .addItem .icon {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  filter: invert(1) drop-shadow(2px 4px 6px #00000040);
+}
+
+#Lister > .items > .addItem .title {
+  text-align: center;
+}

@@ -1,0 +1,87 @@
+#BarList {
+     background: #2f3136;
+     position: relative;
+     margin-right: auto;
+     margin-left: auto;
+     display: flex;
+     margin: 10px;
+     border-radius: 50px;
+}
+
+#BarList .logo {
+     margin-left: 30px;
+     transform: scale(1.5) translateY(15px);
+     z-index: 4;
+     display: none;
+}
+
+#BarList .title {
+     transform: translateY(25%);
+     margin-left: 17px;
+     font-size: 23px;
+     font-weight: bold;
+     color: white;
+     display: none;
+}
+
+#BarList .border {
+     border: none;
+     width: 5px;
+     background: #ffffff14;
+     margin: 0px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     border-radius: 50px;
+     box-shadow: 0px 2px 17px #00000066;
+}
+
+#BarList .list {
+     display: flex;
+     width: min-content;
+     margin: auto;
+     margin-left: 20px;
+}
+
+#BarList .createButton {
+     padding: 10px;
+     cursor: pointer;
+}
+
+
+#BarList .createButton > span {
+     transition: all 0.1s;
+     text-shadow: 0px 5px 7px #00000030;
+}
+
+
+#BarList .createButton:hover > span {
+     color: #ffffffe3;
+}
+
+#BarList .overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: -webkit-fill-available;
+     height: -webkit-fill-available;
+     background: #00000021;
+     backdrop-filter: blur(3px);
+     border-radius: inherit;
+}
+#BarList .overlay .bottombar, #BarList .overlay .topbar {
+     width: 5px;
+     border-radius: 50px;
+     overflow: hidden;
+     height: 20%;
+     background: #9c9ea1;
+     box-shadow: 0 0 10px #00000059;
+     margin: auto;
+}
+#BarList .overlay .lock {
+     text-align: center;
+     margin: 15px;
+}
+
+#BarList .overlay .topbar {
+     margin-top: 25vh;
+}

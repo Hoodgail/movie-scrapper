@@ -1,0 +1,41 @@
+#Settings {
+     margin: 15px;
+}
+#Settings .Item {
+     display: flex;
+}
+#Settings .Item .left {
+     margin-right: 15px;
+}
+#Settings .Item .left .image {
+     height: 50px;
+     width: 50px;
+     border-radius: 50px;
+     box-shadow: 0px 4px 9px #00000029;
+}
+.settings .tippy-box .tippy-content > .contex {
+     width:290px;
+}
+.settings .tippy-box .tippy-content > .contex * {
+     color:rgba(0, 0, 0, 0.572) !important;
+}
+.settings .tippy-box .tippy-content > .contex span {
+     color:white !important;
+}
+.settings .tippy-box {
+     background: #00000038 !important;
+}
+.filepond--drop-label, .filepond--label-action {
+     background: transparent;
+     margin: 0px;
+}
+.filepond--credits {
+     display: none;
+}
+.filepond--root {
+     margin:0px  !important;
+     margin-bottom:0px !important;
+}
+.filepond--root * {
+     background: transparent  !important;
+}

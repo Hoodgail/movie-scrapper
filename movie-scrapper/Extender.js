@@ -20,7 +20,7 @@ export default class Extender {
           return raw;
      }
 
-     /**
+     /**  
       * Gets json data from link site
       * 
       * @param {String} link - The site url
@@ -43,6 +43,19 @@ export default class Extender {
      static async document(link) {
 
           const raw = await this.fetch(link);
+
+          const document = Extender.parseDocument(raw);
+
+          return document;
+     }
+
+     /**
+      * parses raw string it to a document
+      * 
+      * @param {String} raw - The string data
+      * @return {Document}
+      */
+     static parseDocument(raw) {
 
           const { window: { document } } = new JSDOM(raw);
 

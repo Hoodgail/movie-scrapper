@@ -1,0 +1,14 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1097 1097" width="45" height="45">
+	<title>Movie Scrapper logo</title>
+	<defs>
+		<linearGradient id="grd1" gradientUnits="userSpaceOnUse"  x1="148.204" y1="1059.444" x2="947.83" y2="35.97">
+			<stop offset="0" stop-color="#a31de6"  />
+			<stop offset="1" stop-color="#ff6da2"  />
+		</linearGradient>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: url(#grd1) } 
+	</style>
+	<path id="Layer" class="shp0" d="M523.5 18C490.3 24.6 452.3 46.2 416 78.8C341.5 145.9 266.9 254 216.7 367.5C157.2 502.2 135.9 632.6 155 745.7C166 810.8 190.4 869.5 227.3 920C243.3 941.8 270.9 971.1 291.7 988.3C336.3 1025.1 391.2 1053 446.6 1066.9C533.7 1088.8 627.6 1081.6 708.7 1046.9C838.4 991.4 925.2 873.8 943.9 727.9C949.6 683 949.1 626.8 942.4 581C932.4 512.1 913.7 447 883.6 376.5C873.5 353 849.9 305.2 837 282.5C776.9 176.2 706.4 92.1 640.3 47.7C617.9 32.7 591.1 21.1 570.5 17.6C558.1 15.4 535.2 15.6 523.5 18Z" />
+</svg>

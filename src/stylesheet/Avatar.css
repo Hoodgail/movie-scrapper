@@ -1,0 +1,61 @@
+#Avatar {
+    display: none;
+    background: #27292d;
+    height: 35px;
+    width: 35px;
+    margin: 10px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px #0000004d;
+    overflow: hidden;    
+}
+
+#Avatar .image {
+     position: relative;
+     height: -webkit-fill-available;
+}
+
+#Avatar .image img {
+     width: inherit;
+     height: inherit;
+}
+
+#Avatar .image .material-icons {
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+}
+.tippy-content .AvatarBody {
+     display: flex;
+     min-width: 175px;
+     margin: 6px;
+}
+.tippy-content .AvatarBody .logout {
+     color: #f44336;
+     margin: 10px;
+     margin-left: 20px;
+     margin-right: 20px;
+     cursor: pointer;
+}
+.tippy-content .AvatarBody .logout:hover {
+     text-decoration: underline;
+}
+.tippy-content .AvatarBody .label {
+     font-size: 10px;
+}
+
+.tippy-content .AvatarBody .username {
+     color: white;
+     font-size: 18px;
+}
+.tippy-content .AvatarBody .buttons {
+    transform: translateY(35%);
+    height: min-content;
+}
+.tippy-content .AvatarBody .buttons div {
+     transition: all 0.1s;
+}
+.tippy-content .AvatarBody .buttons div:hover {
+     transform:scale(1.1) rotate(-10deg);
+}
